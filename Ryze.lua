@@ -1,5 +1,5 @@
 
-local ver = "0.01"
+local ver = "0.02"
 
 if GetObjectName(GetMyHero()) ~= "Ryze" then return end
 
@@ -32,7 +32,6 @@ RyzeMenu.Combo:Boolean("Q", "Use Q in combo", true)
 RyzeMenu.Combo:Slider("Qpred", "Q Hit Chance", 3,0,10,1)
 RyzeMenu.Combo:Boolean("W", "Use W in combo", true)
 RyzeMenu.Combo:Boolean("E", "Use E in combo", false)
-RyzeMenu.Combo:Boolean("R", "Use R in Combo", true)
 RyzeMenu.Combo:Boolean("Gunblade", "Use Gunblade", true)
 RyzeMenu.Combo:Boolean("Randuins", "Use Randuins", true)
 
@@ -172,17 +171,11 @@ OnTick(function (myHero)
                  if QPred.hitChance > (RyzeMenu.Combo.Qpred:Value() * 0.1) then
                            CastSkillShot(_Q, QPred.castPos)
                  end
-            end	
-                       
-	    	    
-            if RyzeMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, 1750) and (EnemiesAround(myHeroPos(), 1750) >= RyzeMenu.Combo.RX:Value()) then          
-                            CastSkillShot(_R,RPred.castPos)
-                   end
-        
-            end
+             end	                       	    	                
+          end
 			
 	    			
-          end
+          
 
 
 
