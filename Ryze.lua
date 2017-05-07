@@ -1,5 +1,5 @@
 
-local ver = "0.02"
+local ver = "0.03"
 
 if GetObjectName(GetMyHero()) ~= "Ryze" then return end
 
@@ -133,7 +133,7 @@ OnTick(function (myHero)
 			
 	    if RyzeMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, 1000) then
                  local QPred = GetPrediction(target,RyzeQ)
-                 if QPred.hitChance > (RyzeMenu.Combo.Qpred:Value() * 0.1) then
+                 if QPred.hitChance > (RyzeMenu.Combo.Qpred:Value() * 0.1) and not QPred:mCollision(1) then
                            CastSkillShot(_Q, QPred.castPos)
                  end
             end	
@@ -156,7 +156,7 @@ OnTick(function (myHero)
 
             if RyzeMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, 1000) then
                  local QPred = GetPrediction(target,RyzeQ)
-                 if QPred.hitChance > (RyzeMenu.Combo.Qpred:Value() * 0.1) then
+                 if QPred.hitChance > (RyzeMenu.Combo.Qpred:Value() * 0.1) and not QPred:mCollision(1) then
                            CastSkillShot(_Q, QPred.castPos)
                  end
             end	
@@ -168,7 +168,7 @@ OnTick(function (myHero)
 
             if RyzeMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, 1000) then
                  local QPred = GetPrediction(target,RyzeQ)
-                 if QPred.hitChance > (RyzeMenu.Combo.Qpred:Value() * 0.1) then
+                 if QPred.hitChance > (RyzeMenu.Combo.Qpred:Value() * 0.1) and not QPred:mCollision(1) then
                            CastSkillShot(_Q, QPred.castPos)
                  end
              end	                       	    	                
@@ -213,7 +213,7 @@ OnTick(function (myHero)
                 
                 if IsReady(_Q) and ValidTarget(enemy, 1000) and RyzeMenu.KillSteal.Q:Value() and GetHP(enemy) < getdmg("Q",enemy) then
                        local QPred = GetPrediction(target,RyzeQ)
-                       if QPred.hitChance > (RyzeMenu.KillSteal.Qpred:Value() * 0.1) then
+                       if QPred.hitChance > (RyzeMenu.KillSteal.Qpred:Value() * 0.1) and not QPred:mCollision(1) then
                                  CastSkillShot(_Q, QPred.castPos)
                        end
             end
@@ -289,7 +289,7 @@ OnTick(function (myHero)
       
         if RyzeMenu.AutoMode.Q:Value() and ValidTarget(target, 1000) then        
                local QPred = GetPrediction(target,RyzeQ)
-               if QPred.hitChance > (RyzeMenu.AutoMode.Qpred:Value() * 0.1) then
+               if QPred.hitChance > (RyzeMenu.AutoMode.Qpred:Value() * 0.1) and not QPred:mCollision(1) then
                          CastSkillShot(_Q, QPred.castPos)
                end
        end
