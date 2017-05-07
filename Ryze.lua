@@ -246,7 +246,7 @@ OnTick(function (myHero)
                 end
 
                 if RyzeMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(closeminion, 615) then
-	        	CastTargetSpell(target, _W)
+	        	CastTargetSpell(closeminion, _W)
 	        end
 
                 if RyzeMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(closeminion, 615) then
