@@ -1,5 +1,5 @@
 
-local ver = "0.03"
+local ver = "0.04"
 
 if GetObjectName(GetMyHero()) ~= "Ryze" then return end
 
@@ -89,7 +89,7 @@ OnTick(function (myHero)
         local Gunblade = GetItemSlot(myHero, 3146)       
         local Cutlass = GetItemSlot(myHero, 3144)
         local Randuins = GetItemSlot(myHero, 3143)
-        local RyzeQ = {range = 860, delay = 0.26 , speed = 1615, radius = 60}
+        local RyzeQ = { delay = 0.250, speed = 1700, width = 55, range = 1000 }
         
 	--AUTO LEVEL UP
 	if RyzeMenu.AutoMode.Level:Value() then
